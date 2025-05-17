@@ -1,5 +1,5 @@
-# Unilever Scraper: REST API Gateway
-This project is for authenticating users that want to acces main data.
+# Unilever Scraper: RBAC Gateway
+This project is for permission checks to the request based on roles
 
 ## Precaution
 - Set [database](https://github.com/willyyeremi/unilever-scrapper-database) first, so the API can access the data.
