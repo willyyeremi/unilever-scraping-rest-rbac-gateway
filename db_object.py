@@ -13,6 +13,20 @@ base = declarative_base()
 # table on schema: public
 ##############################
 
+class roles(base):
+    __tablename__ = "roles"
+    __table_args__ = {'schema': 'public'}
+    id = Column(Integer, primary_key = True)
+    roles = Column(String)
+    is_active = Column(Integer)
+
+class request_type(base):
+    __tablename__ = "request_type"
+    __table_args__ = {'schema': 'public'}
+    id = Column(Integer, primary_key = True)
+    request_type = Column(String)
+    is_active = Column(Integer)
+
 class users(base):
     __tablename__ = "users"
     __table_args__ = {'schema': 'public'}
@@ -20,4 +34,13 @@ class users(base):
     username = Column(String)
     password_hash = Column(String)
     password_salt = Column(String)
-    role = Column(String)
+    roles_id = Column(String)
+    is_active = Column(Integer)
+
+class roles_permissions(base):
+    __tablename__ = "roles_permissions"
+    __table_args__ = {'schema': 'public'}
+    id = Column(Integer, primary_key = True)
+    roles_id = Column(Integer)
+    request_type_id = Column(Integer)
+    is_active = Column(Integer)
