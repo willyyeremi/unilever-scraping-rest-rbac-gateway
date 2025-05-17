@@ -2,12 +2,11 @@ from flask import Flask
 from flask_jwt_extended import JWTManager
 
 from config import Config
-from routes import auth_bp, forward_bp
+from routes import forward_bp
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.register_blueprint(auth_bp)
 app.register_blueprint(forward_bp)
 
 jwt = JWTManager()
