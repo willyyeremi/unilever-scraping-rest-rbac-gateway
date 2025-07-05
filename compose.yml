@@ -1,13 +1,13 @@
 name: unilever-scraping
 
 services:
-  rbac-routing-gateway:
+  rest-rbac-gateway:
     build: 
       context: . 
       dockerfile: ./dockerfile
     image:
-      unilever-scraping-rbac-routing-gateway
-    container_name: unilever-scraping-rbac-routing-gateway
+      unilever-scraping-rest-rbac-gateway
+    container_name: unilever-scraping-rest-rbac-gateway
     ports:
       - "5001:5001"
     volumes:
