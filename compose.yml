@@ -1,0 +1,26 @@
+name: unilever-scraping
+
+services:
+  rbac-routing-gateway:
+    build: 
+      context: . 
+      dockerfile: ./dockerfile
+    image:
+      unilever-scraping-rbac-routing-gateway
+    container_name: unilever-scraping-rbac-routing-gateway
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./app:/home/project_home/project_workdir
+    working_dir: /home/project_home/project_workdir
+    command: >
+      bash -c "
+      python main.py
+      "
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    name: unilever-scraping-network
+    external: true
