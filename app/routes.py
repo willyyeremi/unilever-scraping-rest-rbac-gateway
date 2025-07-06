@@ -30,7 +30,6 @@ def forward(path):
         identity = get_jwt_identity()
         method = request.method
         request_permission = read_user_request_type(connection_engine = engine, username = identity, request_method = method)
-        print(request_permission)
         if request_permission is None:
             return jsonify({"msg": "Permission denied"}), 401
         target_url = f"{FORWARD_BASE_URL}/{path}"

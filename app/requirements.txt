@@ -4,4 +4,4 @@ python-dotenv
 requests
 sqlalchemy
 psycopg2
-bcrypt
+gunicorn
